@@ -1,22 +1,45 @@
 export default function Hero() {
   return (
     <section className="hero">
+
+      {/* STATUS BADGE */}
+      <div className="hero-badge">
+        🔐 SOC ANALYST • ACTIVE • BLUE TEAM / RED TEAM
+      </div>
+
+      {/* NAME */}
       <h1>
-        <span>I am Suraj Pun Magar</span>
+        Hi, I’m <span>Suraj Pun Magar</span>
       </h1>
 
-      <p>
-        Suraj Pun Magar — SOC Analyst • Web Pentester • Bug Bounty Hunter
+      {/* ROLE */}
+      <h2 className="hero-role">
+        Cybersecurity Analyst | Web Pentester | Bug Bounty Hunter
+      </h2>
+
+      {/* DESCRIPTION */}
+      <p className="hero-text">
+        I specialize in <b>SOC operations, vulnerability assessment, and penetration testing</b>.
+        Experienced in analyzing logs, detecting threats, and securing web applications using real-world attack simulation techniques.
       </p>
 
-      <p className="sub">
-        Cybersecurity specialist focused on threat detection, vulnerability research,
-        penetration testing, and real-world SOC operations using SIEM tools, CTF labs, and security frameworks.
+      {/* EXTRA DETAIL */}
+      <p className="hero-sub">
+        Hands-on with SIEM tools, Burp Suite, Wireshark, TryHackMe, Hack The Box, and PortSwigger Labs.
+        Focused on real-world security research and defensive architecture improvement.
       </p>
 
-      <a className="btn" href="#projects">
-        Enter Security Dashboard
-      </a>
+      {/* CTA BUTTONS */}
+      <div className="hero-buttons">
+        <a className="btn" href="#projects">
+          View Projects
+        </a>
+
+        <a className="btn-outline" href="#contact">
+          Contact Me
+        </a>
+      </div>
+
     </section>
   );
 }

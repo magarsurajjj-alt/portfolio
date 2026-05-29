@@ -5,7 +5,7 @@ export default function Certifications() {
 
   const certs = [
     {
-      title: "CJWAPT - Certified Web Application Penetration Tester",
+      title: "CJWAPT - Web Application Penetration Tester",
       issuer: "Cyber Security Training",
       link: "https://sturtles.in/?page=verify-certificate",
       image: ""
@@ -17,8 +17,8 @@ export default function Certifications() {
       image: ""
     },
     {
-      title: "Cisco Ethical Hacker (Networking Academy)",
-      issuer: "Cisco",
+      title: "Cisco Ethical Hacker",
+      issuer: "Cisco Networking Academy",
       link: "https://www.netacad.com/certificates/?issuanceId=ef3d53ef-d528-4135-9d24-541b5e26f762",
       image: ""
     },
@@ -29,7 +29,7 @@ export default function Certifications() {
       image: ""
     },
     {
-      title: "CAPIJ - Certified API Hacking Junior",
+      title: "CAPIJ - API Hacking Junior",
       issuer: "The XSS Rat",
       link: "https://thexssrat.podia.com/p/certificates/cert_8opI8JGA",
       image: ""
@@ -41,51 +41,72 @@ export default function Certifications() {
       image: ""
     },
     {
-      title: "RATCTF-certificate",
-      issuer: "RatCtf",
+      title: "RATCTF Certification",
+      issuer: "RATCTF Platform",
       link: "https://ratctf.thexssrat.com/users/suraj%20pun%20magar/certificates",
       image: ""
     }
   ];
 
   return (
-    <section id="certifications">
-      <h1>
+    <section id="certifications" className="cert-section">
+
+      <h1 className="section-title">
         Verified <span>Certifications</span>
       </h1>
 
-      <div className="grid">
-        {certs.map((c, i) => (
-          <div className="card" key={i}>
-            <h3>🏆 {c.title}</h3>
-            <p>{c.issuer}</p>
+      <p className="section-subtitle">
+        Industry certifications, cybersecurity training & CTF achievements
+      </p>
 
-            <div style={{ marginTop: "12px", display: "flex", gap: "10px", flexWrap: "wrap" }}>
-              <a className="btn" href={c.link} target="_blank">
+      <div className="grid">
+
+        {certs.map((c, i) => (
+          <div className="card cert-card" key={i}>
+
+            <div className="cert-header">
+              <h3>🏆 {c.title}</h3>
+              <span className="tag">Verified</span>
+            </div>
+
+            <p className="cert-issuer">{c.issuer}</p>
+
+            <div className="cert-actions">
+
+              <a
+                className="btn cert-btn"
+                href={c.link}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Verify
               </a>
 
               {c.image && (
                 <button
-                  className="btn"
+                  className="btn cert-btn secondary"
                   onClick={() => setPreview(c.image)}
                 >
-                  View Certificate
+                  View
                 </button>
               )}
+
             </div>
+
           </div>
         ))}
+
       </div>
 
-      {/* IMAGE PREVIEW MODAL */}
+      {/* MODAL */}
       {preview && (
         <div className="modal" onClick={() => setPreview(null)}>
           <div className="modal-box">
-            <img src={preview} alt="certificate" style={{ width: "100%" }} />
+            <img src={preview} alt="certificate" />
           </div>
         </div>
       )}
+
     </section>
   );
 }
